@@ -31,7 +31,6 @@ module.exports = (app) => {
   app.get(`${IMAGES_URL}/gallery/:gallery`, getImagesByGallery);
 
   const postImageToGallery = (req, res) => {
-    console.log(req.body);
     return imagesDao.createImage({
         ...req.body,
         title: !req.body.title ? '(Untitled)': req.body.title,
